@@ -1,0 +1,20 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://129.28.93.48:3306/autopai_app_manager?characterEncoding=utf-8
+    username: root
+    password: Wutong123!@#
+
+mybatis:
+  mapper-locations: classpath:mapper/**.xml
+  type-aliases-package: com.example.entity
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
