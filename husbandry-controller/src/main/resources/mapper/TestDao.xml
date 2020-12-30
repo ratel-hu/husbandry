@@ -14,4 +14,28 @@
   <select id="getData" resultType="com.husbandry.struggle.controller.husbandry.model.entity.Test">
         select id, name, age, time, version from wt_java_test
   </select>
+
+  <update id="upDate" parameterType="com.husbandry.struggle.controller.husbandry.model.entity.Test">
+        update wt_java_test
+        <set>
+            <if test="name != null and name != ''">
+          name = #{name},
+        </if>
+          <if test="age != null">
+            age = #{age},
+          </if>
+          <if test="time != null">
+            time = #{time},
+          </if>
+          <if test="version != null">
+            version = version+1,
+          </if>
+
+        </set>
+        where id =#{id}
+  </update>
+    <select id="getDataById" resultType="com.husbandry.struggle.controller.husbandry.model.entity.Test">
+        select id, name, age, time, version from wt_java_test
+        where id = #{id}
+    </select>
 </mapper>
